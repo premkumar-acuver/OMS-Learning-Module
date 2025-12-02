@@ -1,0 +1,1 @@
+ALTER TABLE users ADD COLUMN phoneNumber BIGINT CHECK(phoneNumber >= 1000000000 AND phoneNumber <= 9999999999);
