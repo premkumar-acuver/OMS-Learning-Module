@@ -1,0 +1,23 @@
+topic:
+  name: orders-v2
+
+spring:
+  kafka:
+    bootstrap-servers: "127.0.0.1:9092"
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      properties:
+        schema.registry.url: "http://127.0.0.1:8081"
+
+    consumer:
+      group-id: "kafka-schema-avro"
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      auto-offset-reset: "earliest"
+      properties:
+        schema.registry.url: "http://127.0.0.1:8081"
+        spring.deserializer.value.delegate.class: io.confluent.kafka.serializers.KafkaAvroDeserializer
+        specific.avro.reader: true
+        use.latest.version: true
