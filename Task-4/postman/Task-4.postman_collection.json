@@ -1,0 +1,95 @@
+{
+  "info": {
+    "_postman_id": "9a68c8be-b07b-470f-8f4b-0dd209f61e26",
+    "name": "Task-4",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50299831",
+    "_collection_link": "https://prem-kumar-2003-2981576.postman.co/workspace/Prem-Kumar-S's-Workspace~7ebd3f9b-d41c-4b17-86fe-e55dfa5d7fb3/collection/50299831-9a68c8be-b07b-470f-8f4b-0dd209f61e26?action=share&source=collection_link&creator=50299831"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \r\n  \"eventType\": \"ORDER_PAID\",\r\n  \"orderId\": \"ORD-100\",\r\n  \"eventData\": { \r\n      \"bank\": \"SBI\", \r\n      \"amount\" : \"500000.00\",\r\n      \"status\": \"Success\" \r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/publishEvent",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "publishEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"orderId\": \"ORD-999\",\r\n  \"eventType\": \"ORDER_PLACED\",\r\n  \"eventData\": {\r\n    \"items\": [\"Laptop\", \"Mouse\"],\r\n    \"total\": 1200.00\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/publishEvent",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "publishEvent"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"orderId\": \"ORD-999\",\r\n  \"eventType\": \"ORDER_SHIPPED\",\r\n  \"eventData\": {\r\n    \"carrier\": \"FedEx\",\r\n    \"trackingId\": \"FE-556677\"\r\n  }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/publishEvent",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "publishEvent"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
